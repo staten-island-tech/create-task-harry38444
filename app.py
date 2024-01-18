@@ -39,8 +39,7 @@ def rockpaperscissorsgame():
         list.append("draw")
     else: 
         print("Error, check spelling and write the first letter in capital")
-
-continue_game = input("Would you like to continue the game? Yes/No:")
+continue_game = "Yes"
 while continue_game.upper() == "Yes":
     rockpaperscissorsgame()
     continue_game = input("Would you like to continue the game? Yes/No:")
