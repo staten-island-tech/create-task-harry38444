@@ -33,17 +33,17 @@ DOMSelectors.button.addEventListener("click", function() {
         (userChoice === 'paper' && gameResponse === 'Scissors') ||
         (userChoice === 'scissors' && gameResponse === 'Rock')) {
         displayMessage('You lose');
-        gameArray.push(' Lost');
+        gameArray.push('Lost');
     } else if ((userChoice === 'scissors' && gameResponse === 'Paper') ||
         (userChoice === 'rock' && gameResponse === 'Scissors') ||
         (userChoice === 'paper' && gameResponse === 'Rock')) {
         displayMessage('You won');
-        gameArray.push(' Win');
+        gameArray.push('Win');
     } else if (userChoice === gameResponse.toLowerCase()) {
         displayMessage('You draw');
-        gameArray.push(' Tie');
+        gameArray.push('Tie');
     } else {
-        displayMessage('Error, check your spelling and put in lower case');
+        displayMessage('Error, check your spelling');
     }
 
     DOMSelectors.input.value = "";
