@@ -1,0 +1,13 @@
+#history, #restart,
+#game-messages, #btn, #input #form {
+    padding: 10px 20px;
+    margin: 20px 0;
+    margin: 5px 0;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+body {
+    background-color:blueviolet
+}
