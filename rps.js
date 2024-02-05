@@ -4,19 +4,19 @@ const DOMSelectors = {
     button: document.getElementById("btn"),
     history: document.querySelector("#history"),
     restart: document.querySelector("#restart"),
-    gameMessages: document.querySelector("#game-messages"),
-};
+    gameMessages: document.querySelector("#game-messages"),  };
 
+DOMSelectors.history.addEventListener("click", function() {
+    displayMessage("Your game history: ")
+    displayMessage(gameArray)   
+})
 let gameArray = [];
 
+
 function displayMessage(message){
-    DOMSelectors.gameMessages.insertAdjacentHTML("beforeend", `<div>${message}</div>`);
-}
-
+    DOMSelectors.gameMessages.insertAdjacentHTML("beforeend", `<div>${message}</div>`);      }
 DOMSelectors.form.addEventListener("submit", function(event) {
-    event.preventDefault();
-}); 
-
+    event.preventDefault();               }); 
 DOMSelectors.button.addEventListener("click", function() {
     let gameResponse;
     const randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -33,27 +33,25 @@ DOMSelectors.button.addEventListener("click", function() {
         (userChoice === 'paper' && gameResponse === 'Scissors') ||
         (userChoice === 'scissors' && gameResponse === 'Rock')) {
         displayMessage('You lose');
-        gameArray.push(' Lost');
+        gameArray.push('Lost');
     } else if ((userChoice === 'scissors' && gameResponse === 'Paper') ||
         (userChoice === 'rock' && gameResponse === 'Scissors') ||
         (userChoice === 'paper' && gameResponse === 'Rock')) {
         displayMessage('You won');
-        gameArray.push(' Win');
+        gameArray.push('Win');
     } else if (userChoice === gameResponse.toLowerCase()) {
         displayMessage('You draw');
-        gameArray.push(' Tie');
+        gameArray.push('Tie');
     } else {
-        displayMessage('Error, check your spelling and put in lower case');
+        displayMessage('Error, check your spelling');
     }
+    DOMSelectors.input.value = "";          });
 
-    DOMSelectors.input.value = "";
-});
 DOMSelectors.history.addEventListener("click", function() {
     displayMessage("Your game history: ")
-    displayMessage(gameArray)
+    displayMessage(gameArray)   
 })
-
 DOMSelectors.restart.addEventListener("click", function() {
     gameArray = [];
-    DOMSelectors.gameMessages.innerHTML = '';
+    DOMSelectors.gameMessages.innerHTML = '';      
 })
